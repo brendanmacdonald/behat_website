@@ -1,14 +1,5 @@
 #GUIDE
 
-|Link|What do you want to do?|
-|-----|----------|
-|[Initial Set-up](#initial-set-up)|If you are the first person on the project to install this framework, please complete the initial set-up steps|
-|[Onbording to a project](#onboarding-to-a-project)|If the framework is already part of your project repo, please complete the onboarding steps|
-|[Ongoing Update](#ongoing-update)|If you are only updating the framework, please complete the ongoing update steps|
-|[Test Execution](#test-execution)|How to run tests?|
-|[Test Results](#test-results)|Where to find the test results?|
-|[Behat test writing process](#behat-test-writing-process)|How to write new tests?|
-
 ## Dependencies
 ### Composer
 This command will download and install Composer as a system-wide command named composer, under /usr/local/bin.
