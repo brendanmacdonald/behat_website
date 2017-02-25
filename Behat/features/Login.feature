@@ -8,7 +8,7 @@ Feature: Login page
 ###  SUCCESSFUL LOGIN
 #########################################################################################
 
-  @login @regression @bm @javascript
+  @register @javascript
   Scenario: Verify a successful login
     Given I am on "/reg.html"
     And I fill in "name" with "Bob"
@@ -20,7 +20,7 @@ Feature: Login page
     When I press "Submit Message"
     Then I should see "Registration complete"
 
-  @login @regression @bm2 @javascript
+  @register @javascript
   Scenario: Verify a successful login
     Given I visit the Register page
     And I enter the username Mike
@@ -33,7 +33,7 @@ Feature: Login page
     When I press "Submit Message"
     Then I should see "Registration complete"
 
-  @login @regression @bm3 @javascript
+  @register @javascript
   Scenario: Verify the fields on the Register page
     Given I visit the Register page
     Then I verify the fields on the Register page
