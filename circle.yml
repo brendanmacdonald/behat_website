@@ -53,8 +53,8 @@ test:
   override:
     # Execute Behat tests
     - mkdir -p $CIRCLE_TEST_REPORTS/Behat
-    - cd $DOCROOT/behat_website && bin/behat -c Behat/behat.yml --tags=@register -p firefox
+    - cd $DOCROOT && bin/behat -c Behat/behat.yml --tags=@register -p firefox
 
   post:
     # Prepare Behat JUNIT output for CircleCI
-    - cp $DOCROOT/behat_website/Behat/Results/behat.xml $CIRCLE_TEST_REPORTS/Behat
+    - cp $DOCROOT/Behat/Results/behat.xml $CIRCLE_TEST_REPORTS/Behat
