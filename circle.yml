@@ -57,4 +57,4 @@ test:
 
   post:
     # Prepare Behat JUNIT output for CircleCI
-    - cp $DOCROOT/Behat/Results/behat.xml $CIRCLE_TEST_REPORTS/Behat
+    - cp $DOCROOT/Results/behat.xml $CIRCLE_TEST_REPORTS/Behat
