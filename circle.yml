@@ -45,7 +45,7 @@ dependencies:
 test:
   pre:
     #Behat folders
-    - cd $DOCROOT/behat_website/bin && ./cwtest-bootstrap.sh
+    - cd $DOCROOT/bin && ./cwtest-bootstrap.sh
     - cd ~/cache && wget -nc https://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar
     - java -jar ~/cache/selenium-server-standalone-2.53.1.jar:
           background: true
