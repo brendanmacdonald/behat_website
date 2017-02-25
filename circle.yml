@@ -29,7 +29,7 @@ dependencies:
 
     # Add apache config.
     - sudo a2enmod rewrite
-    - sudo cp circle/circle.conf /etc/apache2/sites-available/default.conf
+    - sudo cp circle.conf /etc/apache2/sites-available/default.conf
     - sudo sed -e "s?%DOCROOT%?$DOCROOT?g" --in-place /etc/apache2/sites-available/default.conf
     - sudo sed -e "s?%SERVER%?$SERVER?g" --in-place /etc/apache2/sites-available/default.conf
     - sudo a2ensite default.conf
