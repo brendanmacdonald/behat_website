@@ -45,7 +45,7 @@ dependencies:
 test:
   pre:
     #Behat folders
-    - cd behat_website/bin && ./cwtest-bootstrap.sh
+    - cd $DOCROOT/behat_website/bin && ./cwtest-bootstrap.sh
     - cd ~/cache && wget -nc https://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar
     - java -jar ~/cache/selenium-server-standalone-2.53.1.jar:
           background: true
@@ -53,7 +53,7 @@ test:
   override:
     # Execute Behat tests
     - mkdir -p $CIRCLE_TEST_REPORTS/Behat
-    - cd $DOCROOT/behat_website/Behat && ./run-behat.sh register firefox
+    - cd $DOCROOT/behat_website && bin/behat -c Behat/behat.yml --tags=@register -p firefox
 
   post:
     # Prepare Behat JUNIT output for CircleCI

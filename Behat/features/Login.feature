@@ -10,7 +10,7 @@ Feature: Login page
 
   @register @javascript
   Scenario: Verify a successful login
-    Given I am on "/reg.html"
+    Given I am on "/register.html"
     And I fill in "name" with "Bob"
     And I fill in "email" with "bob@gmail.com"
     And I fill in "phone" with "02076483910"
