@@ -35,11 +35,18 @@ cd ..
 
 5. Update your local configuration
 ------------------------------------
-In your Test folder, edit `Behat/behat.local.yml`. Update:
+Add the following to your hosts file:
+```
+127.0.0.1     behat.demo
+```
 
-* the `base_url` to your local site url
-* the `drupal_root` value to the path to your local drupal installation.
-
+Add the following to your Virtual Hosts file being sure to update the path of this repository on your local machine:
+```
+<VirtualHost *:80>
+    DocumentRoot "<<<THE PATH ON YOUR LOCAL MACHINE>>>/website"
+    ServerName behat.demo
+</VirtualHost>
+```
 
 6. Configure Chrome - Optional Step
 -----------------------------------
