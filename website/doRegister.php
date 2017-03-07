@@ -72,7 +72,7 @@ else {
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1>Registration complete</h1>
+                    <h1>Customer feedback received</h1>
                     <table class="table">
                         <tbody>
                             <tr>

@@ -69,7 +69,7 @@ cd Behat
 Execute the following:
 
 ```
-./run-behat.sh register firefox
+./run-behat.sh contact firefox
 ```
 
 Selenium will launch and run a test. You should see `1 scenarios (1 passed)` in the terminal window after 15-20 seconds.
