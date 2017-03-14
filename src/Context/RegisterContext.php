@@ -15,24 +15,23 @@ class RegisterContext extends PageContext  {
   const FIELD_NAME = 'name';
   const FIELD_EMAIL = 'email';
   const FIELD_PHONE = 'phone';
-  const FIELD_SUBJECT = 'subject';
+  const FIELD_CITY = 'city';
+  const FIELD_FEEDBACK = 'feedback';
   const FIELD_MESSAGE = 'message';
   const FIELD_BY_EMAIL = 'by_email';
   const FIELD_BY_PHONE = 'by_phone';
 
   //  Buttons.
-  const BUTTON_SUBMIT_MESSAGE = 'Submit Message';
-  const BUTTON_CANCEL = 'Cancel';
+  const BUTTON_SEND = 'Send';
 
   // Strings.
   const STRING_EMAIL = "Email";
-  const STRING_PHONE = "Phone";
 
   /**
-   * The path to the Login page.
+   * The path to the Feedback page.
    * @var string
    */
-  private $path = '/register.html';
+  private $path = '/feedback.html';
 
   /**
    * LoginContext constructor.
@@ -42,9 +41,9 @@ class RegisterContext extends PageContext  {
   }
 
   /**
-   * @Given I visit the Register page
+   * @Given I visit the Feedback page
    */
-  public function visitRegisterPage() {
+  public function iVisitTheFeedbackPage() {
     $this->minkContext->visitPath($this->path);
   }
 
@@ -82,14 +81,25 @@ class RegisterContext extends PageContext  {
   }
 
   /**
-   * @Given I select the subject :subject
+   * @Given I enter a city of :city
+   *
+   * @param string $city
+   */
+  public function iEnterACityOf($city) {
+    $this->minkContext->getSession()
+      ->getPage()
+      ->fillField(self::FIELD_CITY, $city);
+  }
+
+  /**
+   * @Given I select the feedback :feedback
    *
    * @param string $subject
    */
   public function iSelectTheSubject($subject) {
     $this->minkContext->getSession()
       ->getPage()
-      ->selectFieldOption(self::FIELD_SUBJECT, $subject);
+      ->selectFieldOption(self::FIELD_FEEDBACK, $subject);
   }
 
   /**
@@ -114,11 +124,6 @@ class RegisterContext extends PageContext  {
         ->getPage()
         ->checkField(self::FIELD_BY_EMAIL);
     }
-    if ($checkbox == self::STRING_PHONE) {
-      $this->minkContext->getSession()
-        ->getPage()
-        ->checkField(self::FIELD_BY_PHONE);
-    }
   }
 
   /**
@@ -127,7 +132,7 @@ class RegisterContext extends PageContext  {
   public function iPressSubmitMessage() {
     $this->minkContext->getSession()
       ->getPage()
-      ->pressButton(self::BUTTON_SUBMIT_MESSAGE);
+      ->pressButton(self::BUTTON_SEND);
   }
 
   /**
@@ -141,17 +146,16 @@ class RegisterContext extends PageContext  {
   }
 
   /**
-   * @Given I verify the fields on the Register page
-   */
+ * @Given I verify the fields on the Register page
+ */
   public function iVerifyTheFieldsOnTheRegisterPage() {
     $this->verifyField(self::FIELD_NAME);
     $this->verifyField(self::FIELD_EMAIL);
     $this->verifyField(self::FIELD_PHONE);
-    $this->verifyField(self::FIELD_SUBJECT);
+    $this->verifyField(self::FIELD_CITY);
+    $this->verifyField(self::FIELD_FEEDBACK);
     $this->verifyField(self::FIELD_MESSAGE);
     $this->verifyField(self::FIELD_BY_EMAIL);
-    $this->verifyField(self::FIELD_BY_PHONE);
-    $this->verifyButton(self::BUTTON_SUBMIT_MESSAGE);
-    $this->verifyButton(self::BUTTON_CANCEL);
+    $this->verifyButton(self::BUTTON_SEND);
   }
 }

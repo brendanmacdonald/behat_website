@@ -3,7 +3,8 @@
 $name = "";
 $email = "";
 $phone = "";
-$subject = "";
+$city = "";
+$feedback = "";
 $message = "";
 $by_email = "";
 $by_phone = "";
@@ -12,7 +13,8 @@ $by_phone = "";
 $name = $_REQUEST['name'];
 $email = $_REQUEST['email'];
 $phone = $_REQUEST['phone'];
-$subject = $_REQUEST['subject'];
+$city = $_REQUEST['city'];
+$feedback = $_REQUEST['feedback'];
 $message = $_REQUEST['message'];
 $by_email =  isset($_REQUEST['by_email']);
 $by_phone =  isset($_REQUEST['by_phone']);
@@ -90,17 +92,23 @@ else {
                             <tr>
                                 <th>Phone</th>
                                 <td>
-                                    <?php echo $phone ?>
+                                  <?php echo $phone ?>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Subject</th>
+                                <th>City</th>
                                 <td>
-                                    <?php echo $subject ?>
+                                  <?php echo $city ?>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Message</th>
+                                <th>feedback</th>
+                                <td>
+                                    <?php echo $feedback ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Feedback</th>
                                 <td>
                                     <?php echo $message ?>
                                 </td>
@@ -109,12 +117,6 @@ else {
                                 <th>By Email</th>
                                 <td>
                                   <?php echo $by_email ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>By Phone</th>
-                                <td>
-                                  <?php echo $by_phone ?>
                                 </td>
                             </tr>
                         </tbody>
