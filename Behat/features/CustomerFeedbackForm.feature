@@ -35,3 +35,8 @@ Feature: Contact From
   Scenario: Verify the fields on the Register page
     Given I visit the Feedback page
     Then I verify the fields on the Register page
+
+  @contact @javascript
+  Scenario: Verify the fields on the Register page
+    Given I visit the Feedback page
+    Then I verify the fields on the Register page
