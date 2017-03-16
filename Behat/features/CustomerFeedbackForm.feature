@@ -1,25 +1,43 @@
-Feature: Contact From
-  In order to provide feedback
+Feature: Feedback From
+  In order to provide feedback to our company
   As a customer
-  I need to be able to open and complete a Contact form
+  I need to complete an online Feedback form with my feedback
 
-
-
-  @contact @javascript
-  Scenario: Customer completes all fields with valid data and submits the form
+  @feedback @javascript
+  Scenario: Customer completes the Feedback form with valid data and submits the form
     Given I am on "/feedback.html"
-    And I fill in "name" with "Bob"
+    And I fill in "name" with "Bob Jones"
     And I fill in "email" with "bob@gmail.com"
-    And I fill in "phone" with "02076483910"
+    And I fill in "phone" with "02075645342"
     And I fill in "city" with "London"
-    And I select "Complaint" from "feedback"
-    And I fill in "message" with "The food was cold, and I will not be back!"
+    And I select "Complaint" from "feedback_options"
+    And I fill in "your_message" with "The food was cold, and I will never come back here again!"
     And I check "by_email"
     When I press "Send"
     Then I should see "Customer feedback received"
 
-  @contact @javascript
-  Scenario: Customer completes all fields with valid data and submits the form (cleaner version)
+
+  @feedback @javascript
+  Scenario Outline: Customer completes the Feedback form with valid data and submits the form
+    Given I am on "/feedback.html"
+    And I fill in "name" with "<Name>"
+    And I fill in "email" with "<Email>"
+    And I fill in "phone" with "<Phone>"
+    And I fill in "city" with "<City>"
+    And I select "<Feedback>" from "feedback_options"
+    And I fill in "your_message" with "<Message>"
+    When I press "Send"
+    Then I should see "Customer feedback received"
+
+    Examples:
+      | Name | Email          | Phone           | City       | Feedback   | Message                                 |
+      | Mike | mike@gmail.com | 02076557744     | Manchester | Question   | What time do you open?                  |
+      | Sam  | sam@gmail.com  | +44 1266 773366 | Aberdeen   | Suggestion | Are you open on Sundays?                |
+      | John | john@gmail.com | 020 8833 6688   | Bristol    | Other      | How do I return my item - it is faulty! |
+
+
+  @feedback @javascript
+  Scenario: Customer completes the Feedback form with valid data and submits the form (cleaner version)
     Given I visit the Feedback page
     And I enter the username Mike
     And I enter the email "mike@gmail.com"
@@ -31,7 +49,7 @@ Feature: Contact From
     When I press "Send"
     Then I should see "Customer feedback received"
 
-  @contact @javascript
-  Scenario: Verify the fields on the Register page
+  @feedback @javascript
+  Scenario: Verify the fields on the Feedback page
     Given I visit the Feedback page
-    Then I verify the fields on the Register page
+    Then I verify the fields on the Feedback page

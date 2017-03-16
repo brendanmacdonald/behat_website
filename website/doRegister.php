@@ -4,8 +4,8 @@ $name = "";
 $email = "";
 $phone = "";
 $city = "";
-$feedback = "";
-$message = "";
+$feedback_options = "";
+$your_message = "";
 $by_email = "";
 $by_phone = "";
 
@@ -14,8 +14,8 @@ $name = $_REQUEST['name'];
 $email = $_REQUEST['email'];
 $phone = $_REQUEST['phone'];
 $city = $_REQUEST['city'];
-$feedback = $_REQUEST['feedback'];
-$message = $_REQUEST['message'];
+$feedback = $_REQUEST['feedback_options'];
+$message = $_REQUEST['your_message'];
 $by_email =  isset($_REQUEST['by_email']);
 $by_phone =  isset($_REQUEST['by_phone']);
 

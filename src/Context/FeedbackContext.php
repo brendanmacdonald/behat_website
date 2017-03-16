@@ -2,22 +2,22 @@
 
 /**
  *@file
- * Class LoginContext tests the behaviour of the login page.
+ * Class FeedbackContext tests the behaviour of the Feedback page.
  */
 
 namespace CWTest\Context;
 
 use CWTest\Exception\CWContextException;
 
-class RegisterContext extends PageContext  {
+class FeedbackContext extends PageContext  {
 
   //  Fields.
   const FIELD_NAME = 'name';
   const FIELD_EMAIL = 'email';
   const FIELD_PHONE = 'phone';
   const FIELD_CITY = 'city';
-  const FIELD_FEEDBACK = 'feedback';
-  const FIELD_MESSAGE = 'message';
+  const FIELD_FEEDBACK = 'feedback_options';
+  const FIELD_MESSAGE = 'your_message';
   const FIELD_BY_EMAIL = 'by_email';
   const FIELD_BY_PHONE = 'by_phone';
 
@@ -136,7 +136,7 @@ class RegisterContext extends PageContext  {
   }
 
   /**
-   * @Given I am still on the Register page
+   * @Given I am still on the Feedback page
    */
   public function iAmStillOnTheLoginPage() {
     $current_url = $this->minkContext->getSession()->getCurrentUrl();
@@ -146,9 +146,9 @@ class RegisterContext extends PageContext  {
   }
 
   /**
- * @Given I verify the fields on the Register page
+ * @Given I verify the fields on the Feedback page
  */
-  public function iVerifyTheFieldsOnTheRegisterPage() {
+  public function iVerifyTheFieldsOnTheFeedbackPage() {
     $this->verifyField(self::FIELD_NAME);
     $this->verifyField(self::FIELD_EMAIL);
     $this->verifyField(self::FIELD_PHONE);

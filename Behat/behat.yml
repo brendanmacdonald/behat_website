@@ -3,7 +3,7 @@ default:
     behat:
       paths: [ %paths.base%/features ]
       contexts:
-        - CWTest\Context\RegisterContext
+        - CWTest\Context\FeedbackContext
         - CWTest\Context\HelperContext:
             parameters:
               screenshot_path: %paths.base%/../Results/screenshots
