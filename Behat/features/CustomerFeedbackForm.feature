@@ -1,10 +1,11 @@
-Feature: Feedback From
+Feature: Feedback page
   In order to provide feedback to our company
   As a customer
-  I need to complete an online Feedback form with my feedback
+  I need to complete an online Feedback page with my feedback
+
 
   @feedback @javascript
-  Scenario: Customer completes the Feedback form with valid data and submits the form
+  Scenario: Customer completes the Feedback page with valid data and submits the page
     Given I am on "/feedback.html"
     And I fill in "name" with "Bob Jones"
     And I fill in "email" with "bob@gmail.com"
@@ -18,7 +19,7 @@ Feature: Feedback From
 
 
   @feedback @javascript
-  Scenario Outline: Customer completes the Feedback form with valid data and submits the form
+  Scenario Outline: Customer completes the Feedback page with valid data and submits the page
     Given I am on "/feedback.html"
     And I fill in "name" with "<Name>"
     And I fill in "email" with "<Email>"
@@ -33,11 +34,11 @@ Feature: Feedback From
       | Name | Email          | Phone           | City       | Feedback   | Message                                 |
       | Mike | mike@gmail.com | 02076557744     | Manchester | Question   | What time do you open?                  |
       | Sam  | sam@gmail.com  | +44 1266 773366 | Aberdeen   | Suggestion | Are you open on Sundays?                |
-      | John | john@gmail.com | 020 8833 6688   | Bristol    | Other      | How do I return my item - it is faulty! |
+      | John | john@gmail.com | (020) 8833 6688 | Bristol    | Other      | How do I return my item - it is faulty! |
 
 
   @feedback @javascript
-  Scenario: Customer completes the Feedback form with valid data and submits the form (cleaner version)
+  Scenario: Customer completes the Feedback page with valid data and submits the page (cleaner version)
     Given I visit the Feedback page
     And I enter the username Mike
     And I enter the email "mike@gmail.com"
