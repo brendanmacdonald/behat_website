@@ -33,8 +33,8 @@ cd bin && ./cwtest-bootstrap.sh
 cd ..
 ```
 
-5. Update your local configuration
-------------------------------------
+5. Update your local configuration (for the included website)
+-------------------------------------------------------------
 Add the following to your hosts file:
 ```
 127.0.0.1     behat.demo
@@ -48,17 +48,7 @@ Add the following to your Virtual Hosts file being sure to update the path of th
 </VirtualHost>
 ```
 
-6. Configure Chrome - Optional Step
------------------------------------
-This is only required if you want to run tests on Chrome. Skip to step 7 if you don't.
-
-(By default, Firefox works out-of-the-box.)
-
-1. Download chromedriver from `http://chromedriver.storage.googleapis.com/index.html?path=2.17/`
-2. Save it to `/usr/local/bin`
-
-
-7. Verify Setup Successful
+6. Verify Setup Successful
 --------------------------
 Navigate to the Behat folder inside your Test folder:
 
